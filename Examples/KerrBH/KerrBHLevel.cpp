@@ -68,7 +68,7 @@ void KerrBHLevel::specificEvalRHS(GRLevelData &a_soln, GRLevelData &a_rhs,
     // undefined values
     BoxLoops::loop(make_compute_pack(
                        CCZ4(m_p.ccz4_params, m_dx, m_p.sigma, m_p.formulation),
-                       SetValue(0, Interval(c_Ham, c_Mom3))),
+                       SetValue(0, Interval(c_Ham, NUM_VARS - 1))),
                    a_soln, a_rhs, EXCLUDE_GHOST_CELLS);
 }
 
